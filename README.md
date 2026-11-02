@@ -24,7 +24,7 @@ model writes: **when is the outcome of a solution decided, and when can the valu
 
 <p align="center"><img src="figures/reproduction.svg" width="640" alt="Reproduced vs reported accuracy"></p>
 
-| Benchmark | Samples per problem | This repository (`exact`, 95 % CI) | Reported |
+| Benchmark | Samples per problem | This repository (`exact`, 95 % CI) | Reported ([1], Table 5) |
 |---|---|---|---|
 | AIME 2026 (30 problems) | 32 | **92.40 %** (84.3–98.1) | 94.01 % |
 | HMMT Feb 2026 (33 problems) | 24 | **81.19 %** (70.3–90.7) | 83.62 % |
@@ -144,6 +144,10 @@ python scripts/analyze_value_study.py --runs work/runs/{judges,branch,hmmt-1,hmm
 python scripts/controls.py work/runs/hmmt-1 work/runs/hmmt-2 > results/value_model/controls.json
 ```
 
+The scripts in `gpu/` are cleaned, portable versions of the job scripts used for the runs. The commands they run,
+and the Python scripts they call, are unchanged. The CPU analysis reproduces every number in `results/` exactly from
+the stored runs.
+
 The raw rollouts (116M generated tokens) are not part of this repository. This study's branch job ran in two parts
 because of a time limit (seed bases 50,000,000 and 60,000,000; see the pre-registration); one job with the default
 seed base is statistically equivalent.
@@ -175,15 +179,28 @@ LICENSE, NOTICE      Apache-2.0 and third-party attributions; CITATION.cff for c
   at 4k tokens, so "probe" was close to a coin flip. All judges are reported.
 - **Scope.** The commitment curve covers AIME 2026 only, and HMMT Feb 2026 uses 24 instead of 32 samples (both were
   compute decisions made before any data).
-- **Precedent.** Related methods exist: confidence-filtered early stopping (DeepConf), Monte Carlo prefix values
-  (Math-Shepherd) and resampling of reasoning steps (Thought Anchors). This study applies such measurements to
-  Paradigma's model and critic, with exact compute accounting against full reproductions.
+- **Precedent.** Related methods exist: confidence-filtered early stopping (DeepConf [5]), Monte Carlo prefix
+  values (Math-Shepherd [6]) and resampling of reasoning steps (Thought Anchors [7]). This study applies such
+  measurements to Paradigma's model and critic, with exact compute accounting against full reproductions.
+
+## References
+
+1. Paradigma. *Limite-1B-Violetto* technical report.
+   [paradigma.inc/research/limite-1b-violetto.pdf](https://paradigma.inc/research/limite-1b-violetto.pdf)
+2. Limite-1B-Violetto model weights. [huggingface.co/paradigma-inc/limite-1b-violetto](https://huggingface.co/paradigma-inc/limite-1b-violetto)
+3. Limite value model. [huggingface.co/paradigma-inc/limite-1b-value-model](https://huggingface.co/paradigma-inc/limite-1b-value-model)
+4. `limite-violetto` serving code and evaluation harness. [github.com/paradigma-inc/limite-violetto](https://github.com/paradigma-inc/limite-violetto)
+5. Y. Fu et al. *Deep Think with Confidence.* 2025. [arXiv:2508.15260](https://arxiv.org/abs/2508.15260)
+6. P. Wang et al. *Math-Shepherd: Verify and Reinforce LLMs Step-by-step without Human Annotations.* 2023.
+   [arXiv:2312.08935](https://arxiv.org/abs/2312.08935)
+7. P. C. Bogdan, U. Macar et al. *Thought Anchors: Which LLM Reasoning Steps Matter?* 2025.
+   [arXiv:2506.19143](https://arxiv.org/abs/2506.19143)
 
 ## License
 
 Apache-2.0 ([LICENSE](LICENSE), [NOTICE](NOTICE)). `src/limite_experiments/third_party/limite/` contains
-Apache-2.0 code by Paradigma, unmodified (see its PROVENANCE.md). The model, value model, harness and datasets are downloaded at run time
-under their own licences. This is independent work, not affiliated with or endorsed by Paradigma; thanks to
+Apache-2.0 code by Paradigma, unmodified (see its PROVENANCE.md). The model, value model, harness and datasets are
+downloaded at run time under their own licences. This is independent work, not affiliated with or endorsed by Paradigma; thanks to
 Paradigma for releasing the model, the value model and the evaluation harness openly.
 
 ## Citation
