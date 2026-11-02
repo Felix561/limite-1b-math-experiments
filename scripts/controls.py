@@ -10,6 +10,7 @@ finish soon.
 
 from __future__ import annotations
 
+import argparse
 import json
 import random
 import sys
@@ -24,8 +25,11 @@ from limite_experiments.stats import bootstrap_ci
 
 
 def main() -> int:
+    ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("runs", type=Path, nargs="+", help="GPU run dirs containing out/gen/samples.jsonl")
+    args = ap.parse_args()
     probs = defaultdict(list)
-    for run in sys.argv[1:]:
+    for run in args.runs:
         for line in (Path(run) / "out/gen/samples.jsonl").open():
             r = json.loads(line)
             key = f"hmmt26:{r['problem']}:{r['rollout']}"
