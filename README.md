@@ -32,7 +32,8 @@ model writes: **when is the outcome of a solution decided, and when can the valu
 AIME 2026 was run with the unmodified upstream harness ([`limite-violetto`](https://github.com/paradigma-inc/limite-violetto)
 @ `7ddad34`, `uv sync --locked`, all defaults). HMMT Feb 2026 uses the harness's taskset, prompt rendering, sampling
 profile, seeds and graders, generated with this repository's script so that every token is available for the study
-below. The intervals are bootstrap intervals over problems. Details: [docs/reproduction.md](docs/reproduction.md).
+below. Problems, reference answers and the `exact` grader come from MathArena [8]; they are not redistributed
+here. The intervals are bootstrap intervals over problems. Details: [docs/reproduction.md](docs/reproduction.md).
 
 ## 2. When is a solution decided?
 
@@ -195,6 +196,8 @@ LICENSE, NOTICE      Apache-2.0 and third-party attributions; CITATION.cff for c
    [arXiv:2312.08935](https://arxiv.org/abs/2312.08935)
 7. P. C. Bogdan, U. Macar et al. *Thought Anchors: Which LLM Reasoning Steps Matter?* 2025.
    [arXiv:2506.19143](https://arxiv.org/abs/2506.19143)
+8. M. Balunović et al. *MathArena: Evaluating LLMs on Uncontaminated Math Competitions.* 2025.
+   [arXiv:2505.23281](https://arxiv.org/abs/2505.23281), [matharena.ai](https://matharena.ai)
 
 ## License
 

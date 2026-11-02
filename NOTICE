@@ -18,6 +18,10 @@ The following are used but not redistributed here; each is subject to its own li
   Limite value model (paradigma-inc/limite-1b-value-model), Apache-2.0
   limite-violetto evaluation harness (github.com/paradigma-inc/limite-violetto), Apache-2.0,
     cloned at run time; benchmark data and graders are loaded by that harness under their own terms
+  Benchmark problems (MathArena/aime_2026, MathArena/hmmt_feb_2026), CC BY-NC-SA 4.0, and the MathArena grader
+    (github.com/eth-sri/matharena); problems originally (c) Mathematical Association of America (AIME) and
+    Harvard-MIT Mathematics Tournament (HMMT). Only aggregate and per-problem scores of our own runs are published
+    here; no problem statements, reference answers or model solutions.
   Development-pool sources: agentica-org/DeepScaleR-Preview-Dataset (MIT), AI-MO/NuminaMath-1.5 (Apache-2.0),
     EleutherAI/hendrycks_math (MIT)
 
