@@ -1,0 +1,35 @@
+[project]
+name = "limite-experiments"
+version = "1.0.0"
+description = "Independent experiments on Limite-1B-Violetto and its value model: reproduction and a value-model study"
+readme = "README.md"
+license = "Apache-2.0"
+authors = [{ name = "Felix Seitzer" }]
+requires-python = ">=3.12"
+dependencies = ["numpy>=1.26"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ruff"]
+figures = ["matplotlib>=3.8"]
+
+[project.urls]
+"Limite-1B-Violetto" = "https://huggingface.co/paradigma-inc/limite-1b-violetto"
+"Value model" = "https://huggingface.co/paradigma-inc/limite-1b-value-model"
+"Upstream harness" = "https://github.com/paradigma-inc/limite-violetto"
+
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+"limite_experiments.third_party.limite" = ["*.json", "*.md"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 120
+extend-exclude = ["src/limite_experiments/third_party"]

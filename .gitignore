@@ -1,0 +1,26 @@
+# environments and caches
+.venv/
+__pycache__/
+*.pyc
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+
+# GPU work directory (upstream clone, raw runs, inputs) and model files
+work/
+runs/
+inputs/
+*.pt
+*.safetensors
+*.ckpt
+*.npz
+*.jsonl
+*.gz
+*.log
+
+# never commit credentials
+.env
+.env.*
+.DS_Store
+*.token
+credentials*.json

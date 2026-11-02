@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it as below."
+title: "Limite-1B-Violetto: reproduction and a value-model study"
+authors:
+  - family-names: Seitzer
+    given-names: Felix
+date-released: 2026-11-02
+version: 1.0.0
+license: Apache-2.0
+repository-code: "https://github.com/Felix561/limite-1b-math-experiments"
+keywords:
+  - reproduction
+  - value model
+  - test-time compute
+  - mathematical reasoning
+  - Limite-1B-Violetto

@@ -1,0 +1,24 @@
+limite-1b-math-experiments
+Copyright 2026 Felix Seitzer
+
+Licensed under the Apache License, Version 2.0 (see LICENSE).
+
+This repository includes third-party code:
+
+  src/limite_experiments/third_party/limite/
+    Unmodified copies of the Limite model implementation from
+    https://huggingface.co/paradigma-inc/limite-1b-violetto
+    (revision b1f3d572ccacb6919f4d64c321b70ba034ddaef2).
+    Copyright Paradigma (paradigma-inc). Licensed under the Apache License, Version 2.0.
+    Provenance and checksums: src/limite_experiments/third_party/limite/PROVENANCE.md
+
+The following are used but not redistributed here; each is subject to its own licence:
+
+  Limite-1B-Violetto model weights (paradigma-inc/limite-1b-violetto), Apache-2.0
+  Limite value model (paradigma-inc/limite-1b-value-model), Apache-2.0
+  limite-violetto evaluation harness (github.com/paradigma-inc/limite-violetto), Apache-2.0,
+    cloned at run time; benchmark data and graders are loaded by that harness under their own terms
+  Development-pool sources: agentica-org/DeepScaleR-Preview-Dataset (MIT), AI-MO/NuminaMath-1.5 (Apache-2.0),
+    EleutherAI/hendrycks_math (MIT)
+
+This project is independent work and is not affiliated with or endorsed by Paradigma.

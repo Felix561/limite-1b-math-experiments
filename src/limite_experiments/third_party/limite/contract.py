@@ -1,0 +1,16 @@
+"""Stable names shared by every Limite consumer."""
+
+MODEL_TYPE = "limite"
+ARCHITECTURE = "LimiteForCausalLM"
+
+BOS_TOKEN_ID = 151643
+EOS_TOKEN_ID = 151643
+PAD_TOKEN_ID = 151643
+
+__all__ = [
+    "ARCHITECTURE",
+    "BOS_TOKEN_ID",
+    "EOS_TOKEN_ID",
+    "MODEL_TYPE",
+    "PAD_TOKEN_ID",
+]
