@@ -1,3 +1,5 @@
+![Limite-1B-Violetto: reproduction and a value-model study. Independent experiments, 2026.](figures/banner.jpg)
+
 # Limite-1B-Violetto: reproduction and a value-model study
 
 Independent experiments on [Limite-1B-Violetto](https://huggingface.co/paradigma-inc/limite-1b-violetto), Paradigma's
@@ -216,3 +218,7 @@ Paradigma for releasing the model, the value model and the evaluation harness op
   url    = {https://github.com/Felix561/limite-1b-math-experiments}
 }
 ```
+
+---
+
+<sub>AI-generated banner, with visual inspiration from [Paradigma](https://paradigma.inc/). Independent project; not affiliated with or endorsed by Paradigma.</sub>
